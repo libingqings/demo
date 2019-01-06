@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            /*background: pink;*/
+        }
+
+        li{
+            list-style: none;
+        }
+
+        .wrap{
+            width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            /*background: palegoldenrod;*/
+        }
+
+        .left{
+            float: left;
+            width: 200px;
+            height: 500px;
+            margin-right: 20px;
+            background: #1178ac;
+
+            /*background: #73a5e7;*/
+
+
+        }
+
+        .right{
+            float: left;
+            width: 570px;
+            height: 800px;
+            background: #3f7cbb;
+
+        }
+
+        .left-top{
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+        }
+
+        .name{
+            font-size: xx-large;
+            margin-left: 45px;
+            color: white;
+        }
+
+        .picture{
+            width: 150px;
+            height: 150px;
+            margin-left: 25px;
+            overflow: hidden;
+            border-radius: 100px;
+        }
+
+        .left-bottom{
+            width: 150px;
+            height: 300px;
+            margin: 50px 25px 0 25px;
+        }
+
+        .nav{
+        }
+
+        .nav li{
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: large;
+            background: #4875e7;
+            margin-top: 5px;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .nav li:hover{
+            background: #0a61a2;
+        }
+
+        .nav li.active{
+            background: #0a61a2;
+        }
+
+        .nav li.first{
+            background: #0a61a2;
+        }
+
+        .info{
+            padding: 20px;
+        }
+
+        .info p{
+            border-bottom: 1px dashed #ccc;
+            height: 40px;
+            line-height: 40px;
+            color: #e7e7e7;
+        }
+        .info span{
+            font-size: larger;
+            color: #ffffff;
+        }
+
+        .info p:last-child{
+            border: none;
+        }
+
+        .info .photos img{
+            margin: 0 10px 10px 0 ;
+        }
+
+        .info .photos, .info .resume{
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="left">
+        <div class="left-top">
+            <span class="name">吴 昊明</span>
+            <div class="picture">
+                <img src="./img/22岁.jpg" alt="" width="150px" >
+            </div>
+        </div>
+        <div class="left-bottom">
+            <div class="nav">
+                <ul>
+                    <li class="first">个人信息</li>
+                    <li>个人简历</li>
+                    <li>成长相册</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <ul class="info">
+            <li class="self-info">
+                <p><span>出生年月: </span>1996.8</p>
+                <p><span>身高体重：</span>165cm/47kg</p>
+                <p><span>联系电话: </span>15320973918</p>
+                <p><span>QQ: </span>609487430</p>
+                <p><span>兴趣爱好: </span><br>
+                    游泳，游泳让我获得健康的同时，也获得了快乐，在运动的同时又能够交到不少的朋友；<br>
+                    阅读，个人偏爱推理侦探类小说，丰富了我的知识面，逻辑推理能力独到，脑洞很大，以至于自己在观察细节方面很信心总能发现不一样的信息点，相出的主意也总能脱颖而出；<br>
+                    看电影，深入了解了各个国家城市的不同风土人情，对于情节故事方面有自己独特的见解，喜欢与人在知乎上进行讨论，也喜欢观看他人对电影的评论，自己有一个本子是记录自己观看电影后思考及电影中印象深刻的语句，也喜欢收集电影票并且自己的鉴赏能力也有了相应的提高。
+                    旅行，旅行需要规划，在旅行途中即要对路线时间进行规划又要对开支消费进行规划在这一条件下，对自己蛮有信心的，在旅行途中接触了各种各样的人，听着旅人的故事丰富了自己的眼界，也开阔了视野，也喜欢摄影在摄影过程中丰富了自己的生活也认识了不少朋友，也为设计规划方面打下基础。
+                </p>
+            </li>
+            <li class="resume">
+                <img src="img/resume.png" alt="">
+            </li>
+            <li class="photos">
+                <img src="img/1岁.jpg" alt="" height="250px">
+                <img src="img/3岁.jpg" alt="" height="250px">
+                <img src="img/20岁.jpg" alt="" height="250px">
+
+                <img src="img/6岁.jpg" alt="" width="250">
+                <img src="img/12岁.jpg" alt="" width="250px">
+                <img src="img/15岁.jpg" alt="" width="250px">
+                <img src="img/18岁.jpg" alt="" width="230px">
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    var nav = document.getElementsByClassName('nav')[0];
+    var aNavItem = nav.getElementsByTagName('li');
+    var aInfoItem = document.getElementsByClassName('info')[0].getElementsByTagName('li');
+
+    for(var i=0;i<aNavItem.length;i++){
+      aNavItem[i].index=i;
+    }
+
+    nav.onclick = function (ev) {
+      for(var i=0;i<aNavItem.length;i++){
+        aNavItem[i].className='';
+      }
+      ev.target.className='active';
+      for(var j=0;j<aInfoItem.length;j++){
+        aInfoItem[j].style.display='none';
+      }
+      aInfoItem[ev.target.index].style.display='block';
+
+    }
+</script>
+
+
+</body>
+</html>
